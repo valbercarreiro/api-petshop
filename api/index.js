@@ -49,7 +49,7 @@ app.use((erro, req, res, proximo) => {
     const serilizador = new SerializadorErro(
         res.getHeader('Content-Type')
     )
-    res.status = status
+    res.status(status)
     res.send(
         serilizador.serializar({
         mensagem: erro.message,
